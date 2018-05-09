@@ -1,0 +1,928 @@
+/*reseting 
+------------------------------------------------------------------ */
+body, html  { height: 100%; }
+html, body, div, span, applet, object, iframe,
+/*h1, h2, h3, h4, h5, h6,*/ p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	/*vertical-align: baseline;*/
+	background: transparent;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+:focus { outline: 0; }
+del { text-decoration: line-through; }
+/*table {border-spacing: 0.8; }*/ /* IMPORTANT, I REMOVED border-collapse: collapse; FROM THIS LINE IN ORDER TO MAKE THE OUTER BORDER RADIUS WORK */
+
+/*------------------------------------------------------------------ */
+
+
+
+
+body { 
+	margin: 0;
+	font-family: Helvetica,Arial,Tahoma,sans-serif;
+	font-size: 0.8em;
+	background: #D6D6D9;
+ }
+ 
+ 
+ 
+#titulo{
+	height:40px;
+	width:1240px;
+    background-color: #000;    
+	float:left
+}
+
+
+ 
+#titulo h1 {
+	text-align: center;
+	/*margin-top: 10px;*/
+	color: #F9E2A2;
+	font-size: 20px;
+ }
+ 
+ 
+ #logo{
+ float:left;
+ height:40px;
+ }
+ 
+ #logo img{
+ height:40px;
+ }
+ 
+ /*
+  #nomUsuario{
+ float:right;
+ margin:10px;
+ }
+ */
+ 
+ 
+ 
+ /*MENU*/
+
+
+
+ul.menu{
+	background-color:#FF8500;
+	margin-bottom: 20px;
+	/*position:absolute;
+	top:3px;
+	/*left:300px;*/
+	float:left;
+	/*right:0px;*/
+	width:1395px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #FFF;
+	border-bottom-color: #FFF;
+
+
+}
+ul.menu li{
+	height:25px;
+	width:100px;
+	float:left;
+	margin-top: 0;
+	margin-right: 25px;
+	margin-bottom: 0;
+	margin-left: 25px;	
+}
+/*#header ul.menu li a{height:23px; display:block; text-indent:-20000px; }*/
+
+ul.menu li a{
+	height:23px;
+	text-decoration:none;
+	position:relative;
+	top:5px;
+	color:#000;
+	display:block;
+	text-align:center;
+}
+ul.menu li a:hover{
+	height:23px;
+	color:#FFF;
+}
+
+
+div#ocultoAdm{
+	visibility:hidden;
+	width:200px;
+}
+
+
+div#ocultoAdm a{
+	background-color: #FF8500;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 1px;
+	width: 120px;
+	/*height: 15px;*/
+	padding:3px 0 0 5px;
+	text-align:left;
+}
+
+
+
+
+#usuarioreg{
+	width:400px;
+	float:right;
+}
+
+
+#usuarioreg p{	
+	position:relative;
+	top:5px;
+	color:#592E00;
+	text-align: right;
+	
+}
+
+
+ul.menu li.line{font-size:22px;width:1px; color:#fff;
+/*background:url(../images/line_m.gif) 0 0 no-repeat*/}
+
+
+
+
+menu select{
+	width:150px;	
+    margin-bottom: 10px;
+	text-align: center;
+}
+
+menu p{
+    font-size: 14px;
+    color: #060;
+    text-align: center;
+	padding-bottom:10px;
+}
+
+
+/*FIN MENU*/
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+form {
+	margin: 0; 
+ }
+ 
+hr { 
+	margin: 10px 0; 
+}
+
+form input, form textarea { 
+	margin-top: 2px;
+	vertical-align: middle; 
+	
+}
+/*
+#formlogin input[type=text], input[type=password], select{
+	width:280px;
+	margin-bottom:10px;
+}
+*/
+
+form label{
+	color:#1A3366;
+	font-size: 11px;
+}
+
+/*
+form fieldset {
+	background: #CCC;
+	padding: 10px; 
+	margin: 10px auto 0 auto; 
+	border: 1px solid gray;
+	width: 900px;
+ }
+*/
+
+
+
+
+#datosTodos {
+	position:absolute;
+	/*background: #D6D6D9;*/
+	padding: 10px;
+	/*margin: 10px auto 0 auto; 
+	border: 1px solid gray;*/
+	width: 1500px;
+	/*height:1500px;*/
+ }
+ 
+ 
+ /*
+ #ctos{	
+	
+	height: 350px;
+	width: 150px;		
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	float: left;
+	padding-right:5px;
+	margin-left:20px;
+	margin-top: 20px;
+}
+ */
+ 
+
+ .bloque, #bloque, #bloque1, #bloque2 {
+    background-color: #F3F3F3;
+    -webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+
+	
+.index{
+	margin-top:180px;	
+}
+
+ 
+ .index .bloque{
+	/*margin-right:50px;
+	float:left;*/
+	width: 300px;	
+	padding: 10px;
+	margin: auto;	
+	}
+ 
+ 
+ 
+ 	.index #botonguardar{
+	margin: 10px 0 0 100px;
+	width: 80px;
+	}
+ 
+ 
+ .modifica{
+	width: 1150px;
+	/*margin: auto;*/
+}
+ 
+ 
+ 
+.modifica .bloque{
+		width: 500px;		
+		padding: 20px;
+		margin:auto;
+		margin-bottom:50px;
+	}
+	
+.modifica #bloque1{		
+		height:50px;		
+	}
+
+	
+.modifica #bloque2{		
+		height:140px;		
+	}
+	
+ .modifica #bloque3{		
+		height:305px;		
+	}
+ 	.modifica .bloque #botonmodificar{
+	margin: 10px;
+	}
+ 
+ .inserta #bloque1, .inserta #bloque2{
+	margin-right:50px;
+	float:left;	
+	padding: 20px;
+	}
+	
+	.inserta #bloque1{
+		width: 765px;
+		height:500px;
+		
+	}
+	
+	.inserta #bloque2{
+		width: 500px;	
+		height:500px;
+		
+	}
+	
+	.inserta #bloque2 #botonguardar{
+	margin: 10px;
+	}
+	
+	/*
+	.tres .bloque{
+	float: left;
+	width: 1000px;	
+	margin-bottom: 20px;
+	margin-right: 20px;
+	padding: 10px;
+}
+
+.cuatro .bloque{
+	
+	width: 1375px;	
+	margin-bottom: 20px;
+	margin-right: 20px;
+	padding: 10px;
+}
+*/
+
+/*
+.tres{
+width: 1100px;
+float:left;
+}
+*/
+
+h3{
+color: #E3B333;
+	background-color: #1C1C1C;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding: 4px 10px;
+	margin: 0px;
+	font-size: 12px;
+}
+
+
+
+.index h3{
+	width: 300px;	
+	margin: 10px 10px 0 0;	
+	margin: auto;
+	margin-top: 100px;
+}
+
+
+.modifica h3{
+	width: 500px;	
+	margin: 10px 10px 0 0;	
+	margin: auto;
+	padding: 5px 20px 5px 20px;
+	margin-top: 30px;
+}
+
+
+/*
+.inserta h3{
+	width: 550px;	
+	margin: 10px 10px 0 0;	
+	float:left;
+}
+*/
+
+.ctoinsertar h3 {
+    width: 130px;
+}
+
+
+/*
+.tres h3{
+	width: 1000px;	
+	margin: 10px 10px 0 0;	
+	float:left;
+}
+
+*/
+
+
+/*
+.cuatro h3{
+	width: 1375px;	
+	margin: 10px 10px 0 0;	
+	/*float:left;*/
+}
+*/
+
+.derecha{
+	padding-top: 10px;
+}
+
+.derecha h3{
+	/*width: 200px;	
+	padding: 4px 0 5px 5px;*/
+	margin-top: 0;
+	font-size: 12px;
+}
+
+#ctos .overflow{
+	overflow-y: scroll;
+	/*height: 400px;*/
+	height: 300px;
+	padding-left: 10px;
+	background-color: #EFEFEF;
+}
+
+#ctos .cuatrotablas{
+height: 1150px;
+}
+
+#ctos .detalle{
+height: 700px;
+}
+
+#ctos .consulta{
+height: 330px;
+}
+
+#ctos .ctoinsertar{
+height: 340px;
+margin-bottom: 20px;
+}
+
+
+
+.consultar .tablaDatos {
+    overflow-y: scroll;
+    height: 400px;
+    width: 1417px;
+}
+
+
+
+
+
+
+/*boton exportar a excel*/
+#buttonExcel{
+	padding:0px !important;
+	margin-left: 40px !important;
+}
+
+#inputExcel{
+	margin: 0px !important;
+	width: 30px !important;
+	height: 30px !important;
+}
+
+
+
+
+
+
+#busqueda .total{
+	font-size: 11px;
+	font-weight: bold;
+}
+
+
+.tablas{
+width: 1200px;
+float: left;
+}
+
+
+/*
+  .inserta .identificacion{
+	margin-right:20px;
+	float:left;
+	width: 200px;	
+	}
+*/	
+
+
+.buscaTecnico {
+	height: 300;
+	width: 700px;	
+	margin-top:30px;
+}
+
+.buscaTecnico h3{
+	width:680px;	
+}
+
+
+.buscaTecnico table tr{
+	width:700px;	
+}
+
+.buscaTecnico table tr td{
+	padding: 5px 0 5px 0;	
+}
+
+.buscaTecnico table .colnombre {
+	width:20%;	
+}
+
+.buscaTecnico table .colapellidos{
+	width:30%;	
+}
+
+.buscaTecnico table .colcontrata{
+	width:15%;	
+}
+
+.buscaTecnico table .colsubcontrata {
+	width:15%;	
+}
+
+.buscaTecnico table .colAutoriz {
+	width:15%;	
+}
+
+.buscaTecnico table .colcheck{
+	width:5%;	
+}
+
+
+.buscaTecnico .tablaDatos{
+	width:700px;
+	height:200px;
+	overflow-y: scroll;	 
+  
+}
+
+
+
+.buscaTecnico table{
+	width:680px;	
+}
+
+	.buscaTecnico #submit2{
+	margin-top: 10px;
+	}
+
+
+	/*
+  .tres .identificacion{
+	margin-right:20px;
+	float:left;
+	width: 300px;	
+	}
+	*/
+
+.usuarios {
+	height: 450;
+	width: 800px;	
+	margin-top:30px;
+}
+.usuarios .tablaDatos{
+	width:800px;
+	height:400px;
+	overflow-y: scroll;	 
+  
+}
+
+.usuarios table tr td{
+	padding: 5px 0 5px 0;	
+}	
+	
+	
+a.nuevoUsu{
+	margin-left: 30px;
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+	background-color: #E67A04;
+	padding: 3px 20px 3px 20px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #DA7506;
+}
+
+a.nuevoUsu:hover{
+	color: #fff;
+}	
+	
+	.index * input, .index * select{
+		width:280px;
+		margin-bottom: 10px;
+	}
+	
+	
+	
+	/*
+	.tres * input{
+		width:250px;
+	}
+	*/
+	
+	.formuDatos * input, .formuDatos * select{
+		/*width:250px;*/
+		margin-bottom: 10px;
+	}
+	
+	.formuDatos .izq{		
+		float:left;
+		margin-left:10px;
+	}
+	
+	.formuDatos .der{		
+		float:right;
+		margin-right:10px;
+	}
+	
+	
+	
+	
+	
+	
+	
+	/*
+.datos{
+	margin-right:20px;
+	float:left;
+	width: 300px;	
+	}
+	*/
+	
+	
+.clear {
+    clear: both;
+}
+
+
+
+
+/*PENDIENTES*/
+
+#tablaPendientes{
+    /*height: 500px;    
+    width: 900px;*/
+	float: left;
+	}
+	
+#resultadoREF{	
+	float: left;
+	width: 1200px;
+	/*margin-top: 30px;	*/
+}
+
+#resultadoCTO{	
+	float: left;
+	/*width: 200px;*/
+	margin-top: 30px;	
+}
+
+#divTablaCtos{
+overflow-y: scroll;
+/*height: 300px;*/
+height: 200px;
+width: 190px;
+margin-top: 40px;
+}
+
+
+table#tablaCtos{
+/*width: 160px;*/
+width: 120px;
+font-size: 11px;
+}
+	
+	
+/*ELIMINAR*/
+
+#tablaEliminar{
+    height: 600px;
+    overflow: scroll;
+    width: 1200px;
+	}
+	
+	
+	
+
+/*CONSULTA*/
+
+#tablaConsulta{
+       
+    /*width: 1200px;
+	float:left;*/
+	/*margin:20px 0 10px 0;*/
+	/*margin:auto;
+	margin-top:30px;*/
+	margin-bottom:10px;
+	border-color: #CAC6C6;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #F6F3F3;
+	/*
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	*/
+	-webkit-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border-radius: 10px;
+	
+	}
+	
+#tablaConsulta .buscaTecnico{
+height:280px;
+
+}
+
+#tablaConsulta .consultar{
+height: 450px; 
+
+}
+
+.consultar{
+margin-top:30px; 
+}
+	
+/*
+Formulario búsqueda
+*/
+#busqueda div{
+/*height: 30px;*/
+float:left;
+font-size:8px;
+}
+
+#busqueda div select, #busqueda div input{
+font-size:12px;
+height:20px;
+margin:5px;
+}
+
+
+
+#busqueda div.opciones{
+	margin:5px 30px 0 0;
+	font-size:11px;
+}
+	
+
+
+#busqueda div #idgd{
+width:80px;
+}
+
+#busqueda div #provincia{
+width:130px;
+}
+
+#busqueda div #gestor{
+width:100px;
+}
+
+#busqueda div #acttesa{
+width:80px;
+}
+
+#busqueda div #actjazz{
+width:200px;
+}
+
+#busqueda div #incidencia{
+width:90px;
+}
+
+#busqueda div #cabecera{
+width:300px;
+}
+
+#busqueda div #actividad{
+width:200px;
+}
+
+#busqueda div .fecha{
+width:100px;
+}
+
+#busqueda div .marginfecha{
+margin-left:30px;
+}
+
+
+
+.botones{
+margin: 6px 0 0 30px;
+}
+
+
+
+/*
+Formulario listadoUsu
+*/
+#tablaConsulta1{
+    height: 200px;    
+    width: 1200px;
+	float:left;
+	margin-top:20px;
+	}
+
+#tablaConsulta2, #tablaConsulta3, #tablaConsulta4{
+    height: 200px;    
+    width: 1200px;
+	float:left;
+	margin-top:110px;
+	}
+
+	
+#tablaConsulta1 table th, #tablaConsulta2 table th, #tablaConsulta3 table th, #tablaConsulta4 table th {
+	font-size:11px;
+	padding: 3px 0;
+}
+
+
+.tablaDatos1, .tablaDatos2, .tablaDatos3, .tablaDatos4{
+	overflow-y: scroll;
+	height: 200px;    
+    width: 1200px;
+}
+
+
+
+
+.tablaDatos1 table, .tablaDatos2 table, .tablaDatos3 table, .tablaDatos4 table{
+	font-size:11px;
+}
+
+.linkRef{
+	padding-right:20px;
+}
+
+/*
+GENERALES
+*/
+
+
+.ulBotones li{
+	margin:20px;
+}
+
+
+a.boton {
+   text-decoration: none;
+   background: #EEE;
+   color: #222;
+   border: 1px outset #CCC;
+   padding: .1em .5em;
+   margin-bottom:10px;
+}
+a.boton:hover {
+   background: #CCB;
+}
+a.boton:active {
+   border: 1px inset #000;
+}
+
+
+
+
+.tablaDatos table{
+	font-size:11px;
+}
+
+#tablaConsulta table th{
+	font-size:11px;
+	padding: 5px 0;
+}
+
+.clear {
+    clear: both;
+}
+
+
+
+
+.izq{
+float:left;
+}
+
+.der{
+float:right;
+}
+
+
+
