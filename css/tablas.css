@@ -43,11 +43,11 @@ table th {
 	*/
 	
 	/*padding:5px;*/
-	border-top:1px solid #F9BE7E;
-	border-bottom:1px solid #F9BE7E;
+	border-top: 1px solid #F9BE7E;
+	border-bottom: 1px solid #F9BE7E;
 	/*border-bottom:1px solid #FFAC35;*/
 	background: #F9E2A2;
-	/*background: -webkit-gradient(linear, left top, left bottom, from(#FFAC35
+	height: auto;	/*background: -webkit-gradient(linear, left top, left bottom, from(#FFAC35
 
 ), to(#FFD68A));
 	background: -moz-linear-gradient(top,  #FFAC35,  #FFD68A);

@@ -1,5 +1,4 @@
 <?php
-
 session_start ();
 ?>
 <HTML LANG="es">
@@ -35,7 +34,7 @@ function menuAdmin() {
 
 
 function confirmation() {
-    if(confirm("¿Confirma la modificación?"))
+    if(confirm("�Confirma la modificaci�n?"))
     {
         return true;
     }
@@ -109,8 +108,8 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 			echo '<li><a  href="./password.php">Cambiar password</a></li>';
 			echo '<li><a  href="./usuarios.php">Opciones usuarios</a></li>';
 			echo '<li><a  href="./tecnicos.php">Opciones t&eacute;cnicos</a></li>';
-			echo '<li><a href="./adProvincias.php">Añadir provincias</a></li>';
-			echo '<li><a href="./adPoblaciones.php">Añadir poblaciones</a></li>';
+			echo '<li><a href="./adProvincias.php">A�adir provincias</a></li>';
+			echo '<li><a href="./adPoblaciones.php">A�adir poblaciones</a></li>';
 			echo '</ul>';
 			echo '</div>';
 			echo '<li class="line">|</li>';
@@ -229,9 +228,9 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 			else
 				$tsql = $tsql . " Comentario='" . $comentario . "',";
 			
-			$tsql = trim ( $tsql, ',' ); // quita última coma
+			$tsql = trim ( $tsql, ',' ); // quita �ltima coma
 			$tsql = $tsql . " WHERE idAcceso='" . $id . "'";
-			$stmt = sqlsrv_query ( $conn, $tsql ) or die ( "Fallo en la actualización" );
+			$stmt = sqlsrv_query ( $conn, $tsql ) or die ( "Fallo en la actualizaci�n" );
 			sqlsrv_free_stmt ( $stmt );
 		}
 		$tsql = "SELECT tbAccesos.idAcceso, tbAccesos.DNI, tbAccesos.Nombre, tbAccesos.Apellidos, tbAccesos.Telefono_Tecnico, tbAccesos.Contrata, ";
@@ -297,7 +296,7 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 			<?PHP
 				if ($row ["Autorizado"] == 0) {
 					print ("<option value=0 selected>No</option>") ;
-					print ("<option value=1>Sí</option>") ;
+					print ("<option value=1>S�</option>") ;
 				} else {
 					print ("<option value=1 selected>Sí</option>") ;
 					print ("<option value=0>No</option>") ;
@@ -467,13 +466,13 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 							<label class="" id="" for="tipo">
 								Tipo
 							</label>
-							<div>
+							<div style="bottom: auto; padding-bottom: auto;">
 								<input type="radio" name="tipo" value="1"
 					<?PHP
 				if ($row ["Tipo"] == 1)
-					print "checked>Trabajo Programado<br>";
+					print "checked>Trabajo Progamado<br>";
 				else
-					print ">Trabajo Programado<br>";
+					print ">Trabajo Progamado<br>";
 				?>
 								<input type="radio" name="tipo" value="2"
 					<?PHP
@@ -482,8 +481,34 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 				else
 					print ">Incidencia Remedy<br>";
 				?>
+				
+							<input type="radio" name="tipo" value="3"
+					<?PHP
+				if ($row ["Tipo"] == 3)
+					print "checked>ICX<br>";
+				else
+					print ">ICX<br>";
+				?>
 					
-							</div>
+														
+							<input type="radio" name="tipo" value="4"
+					<?PHP
+				if ($row ["Tipo"] == 4)
+					print "checked>FTTN<br>";
+				else
+					print ">FTTN<br>";
+				?>
+					
+														
+							<input type="radio" name="tipo" value="5"
+					<?PHP
+				if ($row ["Tipo"] == 5)
+					print "checked>Despligue<br>";
+				else
+					print ">Despligue<br>";
+				?>
+					
+														</div>
 						</div>
 						
 						<!--codigo tp o remedy-->	
@@ -573,7 +598,7 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 			print ("No hay datos detalle disponibles") ;
 		print ("<div>\n") ;
 		
-		// Cerrar conexión
+		// Cerrar conexi�n
 		mysql_close ( $conexion );
 	} // fin es usuario 'usuario'
 	else {
