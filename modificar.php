@@ -470,9 +470,9 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 								<input type="radio" name="tipo" value="1"
 					<?PHP
 				if ($row ["Tipo"] == 1)
-					print "checked>Trabajo Progamado<br>";
+					print "checked>Trabajo Programado<br>";
 				else
-					print ">Trabajo Progamado<br>";
+					print ">Trabajo Programado<br>";
 				?>
 								<input type="radio" name="tipo" value="2"
 					<?PHP

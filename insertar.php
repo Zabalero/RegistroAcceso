@@ -1,5 +1,4 @@
 <?php
-
 session_start ();
 ?>
 
@@ -330,13 +329,11 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 					 */
 					
 					$datosInsertados = true;
-				} 
-				else {
+				} else {
 					echo "<script>alert('error: el campo camara debe de llevar el formato CRXXXXXX o ADXXXXXX')</script>";
 					$datosInsertados = false;
 				}
-			} 
-			else {
+			} else {
 				echo "<script>alert('Falta rellenar los campos obligatorios')</script>";
 				$datosInsertados = false;
 			}
@@ -452,8 +449,7 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 						} else {
 							print ("<TD class='colcheck'><INPUT TYPE='radio' NAME='opcTecnico' VALUE='" . $row ['idTecnico'] . "'></TD>\n") ;
 						}
-					} 
-					else {
+					} else {
 						if ($i == 0) {
 							print ("<TD class='colcheck'><INPUT TYPE='radio' NAME='opcTecnico' VALUE='" . $row ['idTecnico'] . "' checked></TD>\n") ;
 						} else {
@@ -462,8 +458,7 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 					}
 					print ("</TR>\n") ;
 				} // end for
-			} 
-			else {
+			} else {
 				$_SESSION ['existeTecnico'] = false;
 				echo "<script>alert('No existe el tÃ©cnico en la base de datos. Debe introducir sus datos manualmente')</script>";
 			}
@@ -663,7 +658,7 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 					<div class="clear"></div>
 
 					<div class=izq>
-						<input type="radio" name="tipo" value="1">Trabajo Progamado<br>
+						<input type="radio" name="tipo" value="1">Trabajo Programado<br>
 						<input type="radio" name="tipo" value="2" checked>Incidencia Remedy<br>
 						<input type="radio" name="tipo" value="3" >ICX<br>
 						<input type="radio" name="tipo" value="4" >FTTN<br>
