@@ -34,7 +34,7 @@ function menuAdmin() {
 
 
 function confirmation() {
-    if(confirm("ï¿½Confirma la modificaciï¿½n?"))
+    if(confirm("Confirma la modificación?"))
     {
         return true;
     }
@@ -447,7 +447,7 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 				// Conectar con el servidor de base de datos
 				$conn = conectar_bd ();
 				// Enviar consulta
-				$tsql2 = "select idPoblacion, idProvincia, Descripcion from tbPoblaciones WHERE idProvincia ='" . $row ["idProvincia"] . "'";
+				$tsql2 = "select idPoblacion, idProvincia, Descripcion from tbPoblaciones WHERE idProvincia ='" . $row ["idProvincia"] . "' order by Descripcion";
 				$stmt2 = sqlsrv_query ( $conn, $tsql2 ) or die ( "Fallo en la consulta" );
 				
 				echo '<option value= "' . $row ["idPoblacion"] . '">' . $row ["Poblacion"] . '</option>';

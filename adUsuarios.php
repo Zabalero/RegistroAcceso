@@ -26,7 +26,7 @@ function menuAdmin() {
  
  function confirmarGuardar() {
 	
-		if(confirm("Â¿Confirma la modificaciÃ³n?"))
+		if(confirm("¿Confirma la modificación?"))
 		{
 			return true;
 		}

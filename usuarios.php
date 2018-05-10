@@ -26,7 +26,7 @@ function menuAdmin() {
  
  function confirmarEliminar() {
 	
-		if(confirm("Â¿Confirma la eliminaciÃ³n?"))
+		if(confirm("¿Confirma la eliminación?"))
 		{
 			return true;
 		}
