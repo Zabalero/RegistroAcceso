@@ -3,7 +3,7 @@
 <HTML LANG="es">
 <head>
 <meta http-equiv=content-type content=text/html; charset=utf-8> 
-<title>Nueva poblaci&oacute;n</title>
+<title>Nueva cabecera</title>
 <LINK REL="stylesheet" TYPE="text/css" HREF="css/estiloDef.css?ver=1.0">
 
 
@@ -119,7 +119,7 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 						echo '<li><a  href="./password.php">Cambiar password</a></li>';
 						echo '<li><a  href="./usuarios.php">Opciones usuarios</a></li>';
 						echo '<li><a href="./adProvincias.php">Añadir provincias</a></li>';
-						echo '<li><a href="./adPoblaciones.php">Añadir poblaciones</a></li>'; 			
+						echo '<li><a href="./adPoblaciones.php">Añadir cabeceras</a></li>'; 			
 					echo '</ul>';
 					echo '</div>';
 				echo '<li class="line">|</li>';		
@@ -181,7 +181,7 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 					$rows = sqlsrv_has_rows( $stmt );
 					sqlsrv_free_stmt( $stmt);
 					if ($rows === true){				
-						echo "<script>alert('La población ya existe')</script>";
+						echo "<script>alert('La cabecera ya existe')</script>";
 						
 					}
 				
@@ -220,7 +220,7 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 	
 	<div class="index"><!--clase index-->
 				
-		<h3>Nueva poblaci&oacute;n</h3>
+		<h3>Nueva cabecera</h3>
 				
 		<div class="bloque">	<!--bloque1-->	
 
@@ -278,7 +278,7 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 				
 				<!--POBLACION-->
 				<label class="" id="" for="poblacion">
-								Poblaci&oacute;n
+								Cabecera
 				</label>
 				<div>
 				<input id='poblacion' type='text' name='poblacion'
