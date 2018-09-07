@@ -95,7 +95,7 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 		echo '<li><a  href="./usuarios.php">Opciones usuarios</a></li>';
 		echo '<li><a  href="./tecnicos.php">Opciones t&eacute;cnicos</a></li>';
 		echo '<li><a href="./adProvincias.php">Añadir provincias</a></li>';
-		echo '<li><a href="./adPoblaciones.php">Añadir poblaciones</a></li>'; 			
+		echo '<li><a href="./adPoblaciones.php">Añadir cabeceras</a></li>'; 			
 		echo '</ul>';
 		echo '</div>';
 		echo '<li class="line">|</li>';		
@@ -576,7 +576,7 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 	echo '<option value="Subcontrata">Subcontrata</option>';
 	echo '<option value="Camara">C&aacute;mara</option>';
 	echo '<option value="Provincia">Provincia</option>';
-	echo '<option value="Poblacion">Poblaci&oacute;n</option>';
+	echo '<option value="Poblacion">Cabecera</option>';
 	echo '<option value="Fecha registro">Fecha registro</option>';
 	echo '</select>';			
 ?>
@@ -696,7 +696,7 @@ FROM tbAccesos LEFT JOIN (tbPoblaciones LEFT JOIN tbProvincias ON tbPoblaciones.
 	print ("<TH WIDTH='10%'>Subcontrata</TH>\n");
 	print ("<TH WIDTH='11%'>C&aacute;mara</TH>\n");	
 	print ("<TH WIDTH='7%'>Provincia</TH>\n");
-	print ("<TH WIDTH='11%'>Poblaci&oacute;n</TH>\n");					
+	print ("<TH WIDTH='11%'>Cabecera</TH>\n");					
 	print ("<TH WIDTH='5%'>Tipo</TH>\n");
 	print ("<TH WIDTH='7%'>Cod_TP_Remedy</TH>\n");
 	print ("<TH WIDTH='5%'>F. registro</TH>\n");					

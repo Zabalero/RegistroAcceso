@@ -17,7 +17,7 @@ $rows = sqlsrv_has_rows ( $stmt );
 if ($rows === true) {
 	
 	print ('<label class="" id="" for="poblacion">') ;
-	print ('Poblaci&oacute;n') ;
+	print ('Cabecera') ;
 	print ('</label>') ;
 	
 	print ('<div>') ;

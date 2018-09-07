@@ -317,8 +317,95 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 					sqlsrv_free_stmt ( $stmt3 );
 					sqlsrv_close ( $conn );
 					// print ("<p>Datos insertados correctamente</p>");
-					echo "<script>alert('Datos insertados correctamente')</script>";
-					
+					echo "<script>alert('Datos insertados correctamente y mail de notificación enviado')</script>";
+
+//Envio mail notificacion
+
+
+$mailST = 'ssrftth@orange.com';
+$nombreST = 'Servicio Soporte de Red – FTTH';
+$mailSTfco = 'ssrftth@orange.com';
+$nombreSTfco = 'Servicio Soporte de Red – FTTH';
+$headers = "From: $nombreST <$mailST>\r\n" . "MIME-Version: 1.0" . "\r\n" . "Content-type: text/html; charset=UTF-8" . "\r\n";
+$mail_responsable='opercioscnsi@telefonica.es,francisco.flores@orange.com,cwongc.ext@orange.com';
+$mail_usuorigen='ssrftth@orange.com';
+$destinatarios_mail = $mail_responsable . ", " . $mail_usuorigen;
+$destinatarios_mail = str_replace ( ", , , ,", ",", $destinatarios_mail );
+$destinatarios_mail = str_replace ( ", , ,", ",", $destinatarios_mail );
+$destinatarios_mail = str_replace ( ", ,", ",", $destinatarios_mail );
+/* Obtener Miga*/
+$conn = conectar_bd ();
+$tsqlA = "SELECT Descripcion FROM camara.dbo.tbPoblaciones WHERE idPoblacion = ".$poblacion;
+$resultado = sqlsrv_query($conn, $tsqlA);
+$registro = sqlsrv_fetch_array($resultado);
+$resultset_descripcion= $registro['Descripcion'];
+sqlsrv_free_stmt($resultset_descripcion);
+
+$cuerpo= '
+<html>
+<head>
+<meta content="text/html; charset=ISO-8859-1"
+http-equiv="content-type">
+<title>mail</title>
+<style type="text/css"></style>
+</head>
+<body>
+<span style="font-family: Calibri;">Desde planta externa de Jazztel
+(SSR), procedemos a informar
+a CNSI-Telefónica sobre el acceso de personal a una Cámara de Registro
+con los
+siguientes datos:
+</span><br style="font-family: Calibri;">
+<br style="font-family: Calibri;">
+<span style="font-weight: bold; font-family: Calibri;">Miga: </span><span
+style="font-family: Calibri;">' . $resultset_descripcion . '</span><br
+style="font-family: Calibri;">
+<span style="font-weight: bold; font-family: Calibri;">Tipo de
+incidencia: </span><span style="font-family: Calibri;">Afectación de
+servicio clientes Jazztel.</span><br style="font-family: Calibri;">
+<span style="font-weight: bold; font-family: Calibri;">Número de
+cámara: </span><span style="font-family: Calibri;">' . $camara . '</span><br
+style="font-family: Calibri;">
+<span style="font-weight: bold; font-family: Calibri;">Persona de
+contacto: </span><span style="font-family: Calibri;">SSR FTTH</span><br
+style="font-family: Calibri;">
+<span style="font-weight: bold; font-family: Calibri;">Teléfono del
+operador:</span><span style="font-family: Calibri;"> 900804238</span><br
+style="font-family: Calibri;">
+<br style="font-family: Calibri;">
+<span style="font-family: Calibri;">Se regularizará a posteriori el
+acceso en NEON tal y como se
+indica en el procedimiento de gestión del servicio MARCO.<br>
+</span><br>
+<p class="MsoNormal"><b><span
+style="font-family: &quot;Arial Narrow&quot;,&quot;sans-serif&quot;; color: rgb(252, 101, 0); letter-spacing: 0.35pt;">Servicio
+Soporte de Red – FTTH<br>
+Planta externa Jazztel-Orange<br>
+</span></b><span
+style="font-size: 9pt; color: rgb(127, 127, 127); font-family: Calibri;">Tel.:
+900 804
+238<br>
+</span><a style="font-family: Calibri;" href="mailto:ssrftth@orange.com"><span
+style="font-size: 9pt; color: rgb(0, 0, 204);">ssrftth@orange.com</span></a><u
+style="font-family: Calibri;"><span
+style="font-size: 9pt; color: rgb(0, 0, 204);"><o:p></o:p></span></u></p>
+<br>
+</body>
+</html>
+';
+
+//PROCEDIMIENTO DE ENVIO
+$ctrl_error_mail = "";
+if (mail ( $destinatarios_mail,"APERTURA DE CAMARA DE REGISTRO - PLANTA EXTERNA - JAZZTEL", $cuerpo, $headers )) {
+$ctrl_error_mail = "Mail enviado correctamente";
+}
+Else
+{$errorMessage = error_get_last () ['message'];
+$ctrl_error_mail = "El mail no pudo ser enviado. Error: " . $errorMessage . "<br/>Destinatarios: " . $destinatarios_mail;
+}
+//Envio mail notificacion
+echo "<script>alert($ctrl_error_mail)</script>";
+
 					/*
 					 * } //fin actuaciÃ³n vÃ¡lida
 					 *
@@ -453,7 +540,7 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 						if ($i == 0) {
 							print ("<TD class='colcheck'><INPUT TYPE='radio' NAME='opcTecnico' VALUE='" . $row ['idTecnico'] . "' checked></TD>\n") ;
 						} else {
-							print ("<TD class='colcheck'><INPUT TYPE='radio' NAME='opcTecnico' VALUE='" . $row ['idTecnico'] . "'></TD>\n") ;
+							print ("<TD class='colcheck'><INPUT TYPE='radio' NAME='opcTecnico' VALUE='" . $row ['idTecnico'] . "'></TD>\n");
 						}
 					}
 					print ("</TR>\n") ;
