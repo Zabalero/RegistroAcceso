@@ -604,15 +604,22 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 		</div> <!-- fin botones-->
 <?PHP
 		 // Enviar consulta
-	$tsql = "SELECT tbAccesos.idAcceso, tbAccesos.DNI, tbAccesos.Nombre, tbAccesos.Apellidos, tbAccesos.Telefono_Tecnico, tbAccesos.Contrata, ";
+	/*$tsql = "SELECT tbAccesos.idAcceso, tbAccesos.DNI, tbAccesos.Nombre, tbAccesos.Apellidos, tbAccesos.Telefono_Tecnico, tbAccesos.Contrata, ";
 	$tsql = $tsql . " tbAccesos.Subcontrata, tbAccesos.Camara, tbAccesos.Autorizado, tbAccesos.Manual, (convert(varchar(8), Fx_Registro, 3) + ' ' + convert(varchar(8), Fx_Registro, 14)) as Fx_Registro, tbPoblaciones.Descripcion as Poblacion, ";
 	$tsql = $tsql . " tbProvincias.Descripcion as Provincia, iif(tbAccesos.Tipo = 1, 'Trabajos Programados', 'Remedy') as Tipo, tbAccesos.Codigo_TP_Remedy FROM tbAccesos ";
 	$tsql = $tsql . " LEFT JOIN (tbPoblaciones LEFT JOIN tbProvincias ON tbPoblaciones.idProvincia=tbProvincias.idProvincia) ";
-	$tsql = $tsql . " on tbAccesos.idPoblacion=tbPoblaciones.idPoblacion WHERE idAcceso != ''";
+	$tsql = $tsql . " on tbAccesos.idPoblacion=tbPoblaciones.idPoblacion WHERE idAcceso != ''";*/
 /*	
 SELECT tbAccesos.idAcceso, tbAccesos.Camara, tbAccesos.Nombre, tbAccesos.Apellidos, tbPoblaciones.Descripcion as Poblacion, tbProvincias.Descripcion as Provincia
 FROM tbAccesos LEFT JOIN (tbPoblaciones LEFT JOIN tbProvincias ON tbPoblaciones.idProvincia=tbProvincias.idProvincia) on tbAccesos.idPoblacion=tbPoblaciones.idPoblacion
 */
+
+$tsql="SELECT tbAccesos.idAcceso,tbAccesos.DNI,tbAccesos.Nombre,tbAccesos.Apellidos,tbAccesos.Telefono_Tecnico,tbAccesos.Contrata,tbAccesos.Subcontrata,tbAccesos.Camara,tbAccesos.Autorizado,tbAccesos.Manual,(CONVERT ( VARCHAR ( 8 ), Fx_Registro ";
+$tsql=$tsql . ",3 ) + ' ' + CONVERT ( VARCHAR ( 8 ), Fx_Registro, 14 )) AS Fx_Registro,tbPoblaciones.Descripcion AS Poblacion,tbProvincias.Descripcion AS Provincia,CASE WHEN tbAccesos.Tipo = 1 THEN 'Trabajos Programados' WHEN tbAccesos.Tipo = 2 THEN 'Remedy' ";
+$tsql=$tsql . "WHEN tbAccesos.Tipo = 3 THEN 'ICX' ";
+$tsql=$tsql . "WHEN tbAccesos.Tipo = 4 THEN 'FTTN' ";
+$tsql=$tsql . "WHEN tbAccesos.Tipo = 5 THEN 'Despligue' END AS Tipo, tbAccesos.Codigo_TP_Remedy FROM tbAccesos LEFT JOIN ( tbPoblaciones LEFT JOIN tbProvincias ON tbPoblaciones.idProvincia= tbProvincias.idProvincia ) ON tbAccesos.idPoblacion= tbPoblaciones.idPoblacion WHERE idAcceso != ''";
+
 	if (isset($dni) && $dni != "")
 		 $tsql = $tsql . " and tbAccesos.DNI like '%$dni%'";
 	if (isset($nombre) && $nombre != "")
