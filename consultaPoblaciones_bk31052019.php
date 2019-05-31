@@ -7,7 +7,7 @@ $id = $_GET ['id'];
 $conn = conectar_bd ();
 
 // $instruccion2 = "select * from incCTO where idGinc ='".$id."'";
-$tsql = "select idPoblacion, idProvincia, Descripcion, Central from tbPoblaciones where idProvincia ='" . $id . "' order by Central";
+$tsql = "select idPoblacion, idProvincia, Descripcion from tbPoblaciones where idProvincia ='" . $id . "' order by Descripcion";
 
 $stmt = sqlsrv_query ( $conn, $tsql ) or die ( "Fallo en la consulta" );
 
@@ -27,7 +27,7 @@ if ($rows === true) {
 	print ('<option value="" selected></option>') ;
 	while ( $row = sqlsrv_fetch_array ( $stmt ) ) {
 		
-		echo '<option value= "' . $row ["idPoblacion"] . '">' . $row ["Central"] . '</option>';
+		echo '<option value= "' . $row ["idPoblacion"] . '">' . $row ["Descripcion"] . '</option>';
 	} // end while
 	
 	print ("</select>\n") ;

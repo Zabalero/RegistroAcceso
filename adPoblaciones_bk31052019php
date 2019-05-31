@@ -154,7 +154,6 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 				// Provincia
 				$provincia = $_REQUEST['provincia'];
 				$poblacion = $_REQUEST['poblacion'];
-				$central = $_REQUEST['central'];
 	
 				
 
@@ -168,7 +167,7 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 			// procesar formulario
 			   if (isset($insertar) ){
 				
-				if ($provincia!='' && $poblacion!='' && $central!='') {
+				if ($provincia!='' && $poblacion!='') {
 							
 					// Conectar con el servidor de base de datos
 					$conn=conectar_bd();		
@@ -189,8 +188,8 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 					else {
 		
 		
-					$tsql = "insert into tbPoblaciones (idProvincia, Descripcion, central) values ".
-                     "('$provincia', '$poblacion', '$central')";
+					$tsql = "insert into tbPoblaciones (idProvincia, Descripcion) values ".
+                     "('$provincia', '$poblacion')";
 					
 					$stmt = sqlsrv_query( $conn, $tsql)	
 								 or die ("Fallo en la actualización");
@@ -283,21 +282,6 @@ if (es_usuario($_SESSION['usuario'],$_SESSION['password'])){
 				</label>
 				<div>
 				<input id='poblacion' type='text' name='poblacion'
-									<?PHP
-											  // if (isset($insertar))
-												 // print (" VALUE='$poblacion'>\n");
-											   //else
-												  print (">\n");
-									?>
-				</div>
-
-
-				<!--Central-->
-				<label class="" id="" for="poblacion">
-								Central
-				</label>
-				<div>
-				<input id='central' type='text' name='central'
 									<?PHP
 											  // if (isset($insertar))
 												 // print (" VALUE='$poblacion'>\n");

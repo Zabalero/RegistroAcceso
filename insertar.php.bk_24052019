@@ -678,11 +678,11 @@ echo "<script>alert($ctrl_error_mail)</script>";
 
 						<div class="clear"></div>
 
-					<!--CÃ�MARA1-->
+					<!--CÃ�MARA-->
 							<div class="izq">
 							<label class="" id="" for="camara">C&aacute;mara</label>
 							<div>
-								<input id="camara" name="camara" type="text" class="" size="28" maxlength="255" tabindex="3" onkeyup=""
+								<input id="camara" name="camara" type="text" class="" size="65" maxlength="255" tabindex="3" onkeyup=""
 					<?PHP
 		// if (isset($_POST['insertarAcceso']))
 		if ($datosInsertados == false)
@@ -693,9 +693,9 @@ echo "<script>alert($ctrl_error_mail)</script>";
 							</div>
 						</div>
 
-					<div class="clear"></div>
+						<div class="clear"></div>
 
-										<!--PROVINCIA-->
+					<!--PROVINCIA-->
 						<div class="izq">
 							<label class="" id="" for="provincia">Provincia</label>
 							<div>
