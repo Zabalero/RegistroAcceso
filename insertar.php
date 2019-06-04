@@ -98,7 +98,6 @@ if (es_usuario ( $_SESSION ['usuario'], $_SESSION ['password'] )) {
 			echo '<ul>';
 			echo '<li><a  href="./password.php">Cambiar password</a></li>';
 			echo '<li><a  href="./usuarios.php">Opciones usuarios</a></li>';
-			echo '<li><a  href="./tecnicos.php">Opciones t&eacute;cnicos</a></li>';
 			echo '<li><a href="./adProvincias.php">AÃ±adir provincias</a></li>';
 			echo '<li><a href="./adPoblaciones.php">AÃ±adir poblaciones</a></li>';
 			echo '</ul>';
@@ -327,7 +326,7 @@ $nombreST = 'Servicio Soporte de Red – FTTH';
 $mailSTfco = 'ssrftth@orange.com';
 $nombreSTfco = 'Servicio Soporte de Red – FTTH';
 $headers = "From: $nombreST <$mailST>\r\n" . "MIME-Version: 1.0" . "\r\n" . "Content-type: text/html; charset=UTF-8" . "\r\n";
-$mail_responsable='opercioscnsi@telefonica.es,francisco.flores@orange.com,cwongc.ext@orange.com';
+$mail_responsable='opercioscnsi@telefonica.es,cwongc.ext@orange.com';
 $mail_usuorigen='ssrftth@orange.com';
 $destinatarios_mail = $mail_responsable . ", " . $mail_usuorigen;
 $destinatarios_mail = str_replace ( ", , , ,", ",", $destinatarios_mail );
